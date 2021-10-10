@@ -1,0 +1,96 @@
+TD 2 -- fiche réponses Marie MAGNY
+
+Exercice 1
+
+1.	Le main affiche :
+	42 -> System.out.println(mere.meth());
+	42 -> mere.printMeth();
+	24 -> System.out.println(fille.meth());
+	24 -> fille.printMeth();
+	24 -> System.out.println(mereFille.meth());
+	24 -> mereFille.printMeth();
+
+2.	Dans la classe fille :
+		this.meth();//methode fille
+		super.meth();//methode mere
+	Dans le main :
+		fille.meth();//methode fille
+
+3.	Les méthodes statiques ne peuvent pas être redéfinies 
+	donc la methode meth ne peut pas etre dans la classe fille.
+	Le main affiche :
+	42 -> System.out.println(mere.meth());
+	42 -> mere.printMeth();
+	24 -> System.out.println(fille.meth());
+	42 -> fille.printMeth(); : le printMeth va appeller la fct Meth de la classe mere 
+	42 -> System.out.println(mereFille.meth()); : appelle meth de mere : pas de polymorphisme pour les methodes statiques
+	42 -> mereFille.printMeth();
+
+4. 	42 -> System.out.println(mere.meth);
+	42 -> mere.printMeth();
+	
+	24 -> System.out.println(fille.meth);
+	42 -> fille.printMeth();
+	
+	42 -> System.out.println(mereFille.meth);
+	42 -> mereFille.printMeth();
+
+Exercice 2
+
+1.	Erreurs de compilation dans la classe fille :
+		- private void e() {System.out.println("Fille_e");} : il faut mettre protected au lieu de private
+		- char h() {System.out.println("Fille_h"); return ’c’;} : il faut mettre int au lieu de char et changer la valeur de retour
+		- int i() {System.out.println("Fille_i"); return 3; } : il faut mettre void au lieu de int et ne rien retourner
+		- void k() throws Exception {System.out.println("Fille_k"); } : il faut enlever l'exception ou mettre IOException
+
+	Erreurs de compilation dans le main :
+		- mere.miage(), mereFille.miage(); : il n'y a pas de fonction miage() dans la classe mere
+		- mereFille.j();
+		mereFille.k();
+		mereFille.l();
+		mereFille.m(); : il faut ajouter throws ArrayIndexOutOfBoundsException, Exception dans le main
+
+2. 
+
+3. 	Une redéfinition c'est lorsqu'on réécrit une fonction de la classe mère dans la classe fille.
+	Voici des exemples venant de la classe fille
+		- public void a() redéfinie public void a() de la classe mere
+		- protected void b(Fille fille) redéfinie void b(Fille fille) de la classe mere
+		- public void c(Mere mere) redéfinie void c(Mere mere) de la classe mere
+		- static void d() redéfinie static void d() de la classe mere
+		- protected void f() redéfinie private void f() de la classe mere
+		- String g() redéfinie Object g() de la classe mere
+		- void j() throws IOException redéfinie void j() throws Exception de la classe mere
+		- void l() redéfinie void l() throws Exception de la classe mere
+		- void m() throws IOException, IllegalArgumentException redéfinie void m() throws Exception, ArrayIndexOutOfBoundsException de la classe mere
+	
+	Une surcharge c'est lorqu'on réécrit une fonction dans la même classe en changeant le type ou les paramètres
+	Voici des exemples :
+		- void c(Mere mere) de la classe mere est une surcharge de void c() de la classe mere
+		- void c(Fille b) de la classe fille est une surcharge de public void c(Mere mere) de la classe fille
+		- static void d(Mere mere) de la classe fille est une surcharge de static void d() de la classe fille
+
+4.	Le main affiche :
+	Miage : fille.miage(); appelle void miage()
+	Miage : ((Fille)mereFille).miage(); appelle void miage() 
+	Mere_a : mere.a(); appelle fonction a() de la classe mere
+	Fille_a : mereFille.a(); appelle fonction a() de la classe fille car mereFille est de type fille
+	Fille_a : fille.a(); appelle fonction a() de la classe fille
+	Fille_a : ((Mere)mereFille).a(); appelle fonction a() de la classe fille car mereFille est de type fille
+	Fille_b(Fille) : mereFille.b(null); appelle fonction b() de la classe fille
+	Mere_c : mereFille.c(); : appelle fonction c() de la classe mere car la seule fonction c sans arguments est dans la classe mere
+	Fille_c(Mere) : mereFille.c(mere); appelle fonction c(Mere mere) de la classe fille car mereFille est de type fille
+	Fille_c(Mere) : mereFille.c(mereFille); appelle fonction c(Mere mere) de la classe fille car mereFille est de type fille
+	Fille_c(Mere) : mereFille.c(fille); appelle fonction c(Mere mere) de la classe fille car mereFille est de type fille et fille en parametre est aussi de type mere
+	Fille_c(Fille) : fille.c(fille); appelle a fonction c(Fille b) de la classe fille
+	static Mere_d : mere.d(); appelle la fonction d() de la classe mere 
+	static Mere_d : mereFille.d(); appelle la fonction d() de la classe mere car une fonction static dans une classe mere ne peut pas etre redefinie dans la classe fille 
+			donc meme si mereFille est de type fille et qu'il existe une fonction d() dans la classe fille, c'est la fonction d() de la classe mere qui sera appellée
+	Mere_f : mere.printF(); appelle la fonction printF() de la classe mere qui appelle la fonction f() de la classe mere
+	Mere_f : mereFille.printF(); appelle la fonction printF() de la classe mere qui appelle la fonction f() de la classe mere car elle appelle la fonction f() qui est dans sa classe
+
+
+Exercice 3
+
+1. 	
+
