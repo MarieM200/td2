@@ -1,17 +1,16 @@
 package td2;
 
 /**
- * Expr est une classe implemente Eval et qui est la classe mere de Value, Add, Multiplication et RacineCarree
+ * Expr est la classe mere de Value, Add, Multiplication et RacineCarree
  * @see Value
  * @see Add
  * @see Multiplication
  * @see RacineCarree
- * @see Eval
  * 
  * @author magny
  *
  */
-public class Expr implements Eval{
+public class Expr{
 	/**
 	 * Constructeur de la classe Expr
 	 * 
@@ -25,7 +24,7 @@ public class Expr implements Eval{
 	 * 
 	 * @return la valeur de l'expression
 	 */
-	@Override
+	
 	public double eval() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -34,7 +33,7 @@ public class Expr implements Eval{
 	/**
 	 * Affiche l'expression arithmetique non evaluee
 	 */
-	@Override
+	
 	public void affichage() {
 		// TODO Auto-generated method stub
 	}

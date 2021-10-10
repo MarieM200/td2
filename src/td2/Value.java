@@ -1,15 +1,14 @@
 package td2;
 
 /**
- * Value est une classe qui hérite de Expr et qui implemente Eval
+ * Value est une classe qui hérite de Expr
  * @see Expr
- * @see Eval
  * Elle permet de definir un nombre
  * 
  * @author magny
  *
  */
-public class Value extends Expr implements Eval{
+public class Value extends Expr{
 	private double val;
 	
 	/**

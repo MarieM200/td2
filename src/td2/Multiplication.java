@@ -1,15 +1,14 @@
 package td2;
 
 /**
- * Multiplication est une classe qui hérite de Expr et qui implemente Eval
+ * Multiplication est une classe qui hérite de Expr 
  * @see Expr
- * @see Eval
  * Elle permet de donner la multiplication de deux nombres
  * 
  * @author magny
  *
  */
-public class Multiplication extends Expr implements Eval{
+public class Multiplication extends Expr{
 	private Expr val1;
 	private Expr val2;
 	

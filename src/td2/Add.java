@@ -1,15 +1,14 @@
 package td2;
 
 /**
- * Add est une classe qui hérite de Expr et qui implemente Eval
+ * Add est une classe qui hérite de Expr
  * @see Expr
- * @see Eval
  * Elle permet de donner la somme de deux nombres
  * 
  * @author magny
  *
  */
-public class Add extends Expr implements Eval{
+public class Add extends Expr{
 	private Expr val1;
 	private Expr val2;
 	

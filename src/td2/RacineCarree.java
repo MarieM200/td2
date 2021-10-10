@@ -1,15 +1,14 @@
 package td2;
 
 /**
- * RacineCarre est une classe qui hérite de Expr et qui implemente Eval
- * @see Expr
+ * RacineCarre est une classe qui hérite de Expr 
  * @see Eval
  * Elle permet de donner la racine carree d'un nombre
  * 
  * @author magny
  *
  */
-public class RacineCarree extends Expr implements Eval{
+public class RacineCarree extends Expr{
 	private double val;
 	char c = '\u221a';
 	
