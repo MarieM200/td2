@@ -2,13 +2,13 @@ package td2;
 
 /**
  * Value est une classe qui hérite de Expr
- * @see Expr
+ * @see Exp
  * Elle permet de definir un nombre
  * 
  * @author magny
  *
  */
-public class Value extends Expr{
+public class Value implements Expr{
 	private double val;
 	
 	/**
@@ -35,7 +35,6 @@ public class Value extends Expr{
 	/**
 	 * Affiche l'expression arithmetique d'une valeur non evaluee
 	 */
-	@Override
 	public void affichage() {
 		System.out.println("Value: " + val + " = ");
 	}

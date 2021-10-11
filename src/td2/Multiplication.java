@@ -2,13 +2,13 @@ package td2;
 
 /**
  * Multiplication est une classe qui hérite de Expr 
- * @see Expr
+ * @see Exp
  * Elle permet de donner la multiplication de deux nombres
  * 
  * @author magny
  *
  */
-public class Multiplication extends Expr{
+public class Multiplication implements Expr{
 	private Expr val1;
 	private Expr val2;
 	
@@ -39,7 +39,6 @@ public class Multiplication extends Expr{
 	/**
 	 * Affiche l'expression arithmetique d'une multiplication non evaluee
 	 */
-	@Override
 	public void affichage() {
 		System.out.println("Multiplication: " + val1.eval() + " * " + val2.eval() + " = ");
 	}

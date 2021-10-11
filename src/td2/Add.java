@@ -2,13 +2,13 @@ package td2;
 
 /**
  * Add est une classe qui hérite de Expr
- * @see Expr
+ * @see Exp
  * Elle permet de donner la somme de deux nombres
  * 
  * @author magny
  *
  */
-public class Add extends Expr{
+public class Add implements Expr{
 	private Expr val1;
 	private Expr val2;
 	
@@ -39,7 +39,6 @@ public class Add extends Expr{
 	/**
 	 * Affiche l'expression arithmetique d'une somme non evaluee
 	 */
-	@Override
 	public void affichage() {
 		System.out.println("Add: " + val1.eval() + " + " + val2.eval() + " = ");
 	}

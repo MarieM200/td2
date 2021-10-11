@@ -8,7 +8,7 @@ package td2;
  * @author magny
  *
  */
-public class RacineCarree extends Expr{
+public class RacineCarree implements Expr{
 	private double val;
 	char c = '\u221a';
 	
@@ -36,7 +36,6 @@ public class RacineCarree extends Expr{
 	/**
 	 * Affiche l'expression arithmetique de racine carree non evaluee
 	 */
-	@Override
 	public void affichage() {
 		System.out.println("Racine Carree: " + c + val + " = ");
 	}
