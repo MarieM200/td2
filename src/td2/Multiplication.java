@@ -39,6 +39,7 @@ public class Multiplication implements Expr{
 	/**
 	 * Affiche l'expression arithmetique d'une multiplication non evaluee
 	 */
+	
 	public void affichage() {
 		System.out.println("Multiplication: " + val1.eval() + " * " + val2.eval() + " = ");
 	}
